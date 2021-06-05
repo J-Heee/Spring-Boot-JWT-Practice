@@ -6,8 +6,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity    //데이터베이스의 테이블과 1:1 매핑되는 객체 의미
-@Table(name = "user")    //테이블 명을 user로 지정하기 위해 Table 어노테이션 사용
+@Entity
+@Table(name = "user")
 @Getter
 @Setter
 @Builder
@@ -19,7 +19,7 @@ public class User {
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;    // userId라는 자동 증가되는 PK
+    private Long userId;    //자동 증가되는 PK
 
     @Column(name = "username", length = 50, unique = true)
     private String username;
